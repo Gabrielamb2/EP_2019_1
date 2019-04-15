@@ -11,7 +11,8 @@ def carregar_cenarios():
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "biblioteca": "Ir para a biblioteca",
+                "predio 2": "atravesse a rua e procure o professor no predio novo" 
             }
         },
         "andar professor": {
