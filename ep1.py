@@ -60,7 +60,7 @@ def carregar_cenarios():
             "itens" :{},
             "pontos de combate" : {
                     "pontos de vida":100, 
-                    "ataques":"___________", 
+                    "ataques":{"implorar por compaixao":8, "desculpa sou bixo nao sabia":5, "mano e uma looonga historia, mas juro q n foi culpa minha": 12}, 
                     "defesa" : 9}
         }
     }
