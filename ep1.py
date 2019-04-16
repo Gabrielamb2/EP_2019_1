@@ -4,6 +4,7 @@
 # - aluno A: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 # - aluno B: Antonio Fonseca, antonioarf@al.insper.edu.br
 
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
