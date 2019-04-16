@@ -12,9 +12,27 @@ def carregar_cenarios():
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
-                "predio 2": "atravesse a rua e procure o professor no predio novo" 
+                "Hall predio 2": "atravesse a rua e procure o professor no predio novo" 
             }
         },
+          "Hall predio 2":{
+                  "titulo":" Uma Nova Esperanca",
+                  "descricao":"Seja muito bem vindo ao novo predio",
+                  "opcoes":{
+                      "sala dos professores":"subir procurar pelo professor no terceiro andar",
+                      "inicio": "tente procurar no predio 1",
+                      "atendimento dos ninjas":"talvez eles tenham noticias do professor"
+                      }
+                  },  
+        "sala dos professores":{
+                "titulo":"cupula do mal",
+                "descricao":"se entrar, devera enfrentar todos os professores de uma vez",
+                "opcoes":{
+                    "Hall predio 2": "Volte ao terrio e repense sua busca",
+                    "atendimento dos ninjas":"talvez eles tenham noticias do professor",
+                    "lutar":"tente a sorte, se ganhar sera muito bem recompensado"
+                        }
+                },
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
@@ -38,7 +56,7 @@ def carregar_cenarios():
             }
         },
         "seu perfil" : {
-            "classe":"voce e bixo, pobre coitado,/n veteranos tem vantagem contra voce, mas o nivel de do do professor cresce",
+            "classe":"voce e bixo, veteranos tem vantagem contra voce, mas o nivel de do do professor cresce",
             "itens" :{},
             "pontos de combate" : {
                     "pontos de vida":100, 
@@ -71,9 +89,7 @@ def main():
         # o cenário atual.
         print (cenario_atual["titulo"])
         print ("-"*len(cenario_atual["titulo"]))
-        print (cenario_atual["descricao"])
-               
-               
+        print (cenario_atual["descricao"])      
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
