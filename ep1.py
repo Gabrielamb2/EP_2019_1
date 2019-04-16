@@ -4,7 +4,6 @@
 # - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 
-
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -64,7 +63,7 @@ def main():
     print()
 
     cenarios, nome_cenario_atual = carregar_cenarios()
-
+    
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
@@ -83,6 +82,9 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
+            print("suas opções são:")
+            for e in cenario_atual["opcoes"]:
+                print("{0}: {1}".format(e,cenario_atual["opcoes"][e]))
             escolha = input("Para onde você quer ir agora?")
 
             if escolha in opcoes:
