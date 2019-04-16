@@ -1,8 +1,8 @@
 # EP 2019-1: Escape Insper
 #
 # Alunos: 
-# - aluno A: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
-# - aluno B: Antonio Fonseca, antonioarf@al.insper.edu.br
+# - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
+# - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 
 
 def carregar_cenarios():
@@ -83,7 +83,7 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
-            escolha = ""
+            escolha = input("Para onde você quer ir agora?")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
