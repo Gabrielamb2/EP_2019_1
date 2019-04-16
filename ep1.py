@@ -36,6 +36,14 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
             }
+        },
+        "seu perfil" : {
+            "classe":"voce e bixo, pobre coitado,/n veteranos tem vantagem contra voce, mas o nivel de do do professor cresce",
+            "itens" :{},
+            "pontos de combate" : {
+                    "pontos de vida":100, 
+                    "ataques":"___________", 
+                    "defesa" : 9}
         }
     }
     nome_cenario_atual = "inicio"
