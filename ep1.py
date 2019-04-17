@@ -3,7 +3,7 @@
 # Alunos: 
 # - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
-
+import random
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -169,8 +169,34 @@ def main():
                 print (e +":seus ataques sao segredo kkkk" )
             else:
                 print (e +":" + str(cenarios["professor"]["pontos de combate"][e]))
-    
-    if game_over == True:      
+        print ()
+        print ("VAMOS LUTAR")
+        print ()
+        
+        vida_prof = cenarios["professor"]["pontos de combate"]["prontos de vida"]
+        vida_player = cenarios["seu perfil"]["pontos de combate"]["prontos de vida"]
+        defesa_prof = cenarios["professor"]["pontos de combate"]["prontos de defesa"]
+        desefa_player = cenarios["seu perfil"]["pontos de combate"]["prontos de defesa"]
+        while vida_prof > 0 and vida_player >0:
+            qual_ataque = random.randint(4)
+            ataque = cenarios["professor"]["pontos de combate"]["ataques"][qual_ataque]
+            if ataque > desefa_player:
+                vida_player -= ataque
+            elif ataque == desefa_player:
+                vida_player -= ataque/2
+            print (cenarios["seu perfil"]["pontos de combate"]["ataques"])
+            aaataque = input("escolha seu ataque")
+            contra_ataque = cenarios["seu perfil"]["pontos de combate"]["ataques"][aaataque]
+            if contra_ataque > defesa_prof:
+                vida_prof -= ataque
+            elif ataque == defesa_prof:
+                vida_prof -= ataque/2
+            
+    if vida_prof <= 0:
+        print ("PARABENS, VOCE VENCEU")
+        print ("A EP FOI ADIADA POR SUA CAUSA")
+        print ("!!!!!!!!!!!")
+    elif game_over == True or vida_player <= 0:      
         print("Você morreu!")
 
 
