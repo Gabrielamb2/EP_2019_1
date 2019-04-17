@@ -3,7 +3,7 @@
 # Alunos: 
 # - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
-
+# colocar funcao "stop"
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -40,13 +40,13 @@ def carregar_cenarios():
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "professor": "Falar com o professor"
             }
-        },
+        },#o professor eh classificado agora como monstro
         "professor": {
             "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
+            "descricao": "Voce foi pedir para o professor adiar o EP. Que a forca esteja com vc. " 
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.",
-            "opcoes": {}
+            "opcoes": {"lutar"}
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -55,17 +55,32 @@ def carregar_cenarios():
                 "inicio": "Voltar para o saguao de entrada"
             }
         },
-        "seu perfil" : {
+        "lutar":{
+            "titulo": "Chegou a hora",
+            "descricao":"Use seus ataques e tente vencer",
+            "opcoes":"nao existe mais fuga"
+        }
+    }
+    perfis = {
+             "seu perfil" : {
             "classe":"voce e bixo, veteranos tem vantagem contra voce, mas o nivel de do do professor cresce",
             "itens" :{},
             "pontos de combate" : {
                     "pontos de vida":100, 
                     "ataques":{"implorar por compaixao":8, "desculpa sou bixo nao sabia":5, "mano e uma looonga historia, mas juro q n foi culpa minha": 12}, 
                     "defesa" : 9}
+            },
+            "perfil do professor":{
+            "Mateira":"Desastre de Software",
+            "itens":"ele e o professor, nao precisa de itens",
+            "pontos de combate" : {
+                    "pontos de vida":100, 
+                    "ataques":{1:8, 2:5, 3:20, 4:10}, 
+                    "defesa" : 12}
+            }
         }
-    }
     nome_cenario_atual = "inicio"
-    return cenarios, nome_cenario_atual
+    return cenarios, nome_cenario_atual, perfis
 
 #transformando o dicionário em um arquivo (json)
 #import json
@@ -83,20 +98,22 @@ def main():
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
     print()
-    
+    print()
 
-    cenarios, nome_cenario_atual = carregar_cenarios()
-    
+    cenarios, nome_cenario_atual, perfis = carregar_cenarios()    
+        
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
         # Aluno A: substitua este comentário pelo código para imprimir 
         # o cenário atual.
+        print ()
+        print ()
         print (cenario_atual["titulo"])
         print ("-"*len(cenario_atual["titulo"]))
         print (cenario_atual["descricao"])      
         opcoes = cenario_atual['opcoes']
-        if len(opcoes) == 0:
+        if len(opcoes) == 0 or perfis["seu perfil"]["pontos de combate"]["pontos de vida"] == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
@@ -108,7 +125,9 @@ def main():
                 print("{0}: {1}".format(e,cenario_atual["opcoes"][e]))
             escolha = input("Para onde você quer ir agora?")
 
-            if escolha in opcoes:
+            if escolha == "lutar":
+            #acresentar dinamica de luta
+            elif escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
                 print("Sua indecisão foi sua ruína!")
