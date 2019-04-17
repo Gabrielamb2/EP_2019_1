@@ -145,6 +145,21 @@ def main():
                     print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
                     print()
                     print()
+                elif contadores["Hall predio 2"]==3:
+                    print()
+                    print("Você estava com pressa e esqueceu da catraca e ela bateu em você, fazendo com que se machucasse e perdesse 2 pontos de vida")
+                    cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=2
+                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print()
+                    print()
+                elif contadores["sala professor"]==1:
+                    print()
+                    print("Você foi a sala dos professores na intenção do seu professor ter voltado pra lá mas quem você encontrou foi o Hage, seu professor de Modsm que foi reclamar da sua nota na Pi")
+                    cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=5
+                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print()
+                    print()
+
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
