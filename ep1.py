@@ -67,7 +67,7 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-contador_vidas=3 #o jogador possui 3 vidas antes que acabe o jogo, os montros destroem vidas
+
 def main():
     print("Na hora do sufoco!")
     print("------------------")
@@ -78,7 +78,6 @@ def main():
     print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
-    print("você tem {0} vidas para encontrar o professor".format(contador_vidas))
     print()
     
 
@@ -112,6 +111,7 @@ def main():
                 game_over = True
 
     print("Você morreu!")
+
 
 
 # Programa principal.
