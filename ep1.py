@@ -67,6 +67,10 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
+#transformando o dicionário em um arquivo (json)
+#import json
+#with open("nome do doc", "r")as f:
+#    c= jason.load(f)
 
 def main():
     print("Na hora do sufoco!")
