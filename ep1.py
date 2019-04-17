@@ -14,9 +14,13 @@ def carregar_cenarios():
                 "biblioteca": "Ir para a biblioteca",
                 "Hall predio 2": "atravesse a rua e procure o professor no predio novo",
                 "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
-                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento"
+                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento",
+                "explorar o saguao mais a fundo": "Vamos explorar para ver se encontramos ele"
             }
         },
+        "explorar o saguao mais a fundo": {
+                "titulo": "Explorando o Saguao" ,
+                "descricao": "ao explorar esse andar você pode encontrar coisas inesperadas"}
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
@@ -26,7 +30,8 @@ def carregar_cenarios():
                 "biblioteca": "descer para o Térreo e entrar na bilbioteca",
                 "Hall predio 2": "descer, atravessar a rua até o prédio novo", 
                 "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
-                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento"
+                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento",
+                "explorar esse andar mais a fundo": "Vamos explorar para ver se encontramos ele"
             }
         },
         "biblioteca": {
@@ -37,7 +42,8 @@ def carregar_cenarios():
                 "Hall predio 2": "Atravesse a rua até o prédio novo", 
                 "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
                 "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento",
-                "andar professor": "Tomar o elevador para o andar do professor"
+                "andar professor": "Tomar o elevador para o andar do professor",
+                "explorar a biblioteca mais a fundo": "Vamos explorar para ver se encontramos ele"
             }
         },
           "Hall predio 2":{
@@ -48,7 +54,8 @@ def carregar_cenarios():
                       "inicio": "tente procurar no predio 1",
                       "atendimento dos ninjas":"talvez eles tenham noticias do professor",
                       "andar professor": "Tomar o elevador para o andar do professor",
-                      "biblioteca": "ir para o prédio 1 e entrar na bilbioteca"
+                      "biblioteca": "ir para o prédio 1 e entrar na bilbioteca",
+                      "explorar o Hall predio 2 mais a fundo": "Vamos explorar para ver se encontramos ele"
                       }
                   },  
             "sala professor":{
@@ -59,7 +66,8 @@ def carregar_cenarios():
                     "atendimento dos ninjas":"talvez eles tenham noticias do professor",
                     "inicio": "tente procurar no predio 1",
                     "biblioteca": "ir para o prédio 1 e entrar na bilbioteca",
-                    "sala professor":"subir procurar pelo professor no terceiro andar"
+                    "sala professor":"subir procurar pelo professor no terceiro andar",
+                    "explorar a sala do professor mais a fundo": "Vamos explorar para ver se encontramos ele"
                         }
                 },
             "atendimento dos ninjas":{
@@ -70,7 +78,8 @@ def carregar_cenarios():
                         "andar professor": "Tomar o elevador para o andar do professor",
                         "biblioteca":"Ir para a biblioteca",
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
-                        "Sala professor":"subir procurar pelo professor no terceiro andar" }
+                        "Sala professor":"subir procurar pelo professor no terceiro andar",
+                        "explorar o atendimento mais a fundo": "Vamos explorar para ver se encontramos ele"}
         },
         "professor": {
             "titulo": "O monstro do Python",
@@ -100,6 +109,7 @@ def carregar_cenarios():
 
 def main():
     contadores= {"inicio": 1,"Hall predio 2": 0, "sala professor":0, "andar professor":0, "biblioteca": 0, "atendimento dos ninjas": 0, "professor": 0 }
+    inventário= []
     print("Na hora do sufoco!")
     print("------------------")
     print()
@@ -119,6 +129,7 @@ def main():
         cenario_atual = cenarios[nome_cenario_atual]
         # Aluno A: substitua este comentário pelo código para imprimir 
         # o cenário atual.
+        print()
         print (cenario_atual["titulo"])
         print ("-"*len(cenario_atual["titulo"]))
         print (cenario_atual["descricao"])      
@@ -142,44 +153,54 @@ def main():
                     print()
                     print("Você esqueceu sua carterinha e terá que falar com a recepcionista, você perde 15 pontos de vida")
                     cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=15
-                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print("Assim,você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    contadores["inicio"]+=1
                     print()
                     print()
                 elif contadores["Hall predio 2"]==3:
                     print()
                     print("Você estava com pressa e esqueceu da catraca e ela bateu em você, fazendo com que se machucasse e perdesse 2 pontos de vida")
                     cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=2
-                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print("Assim,você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    contadores["Hall predio 2"]+=1
                     print()
                     print()
                 elif contadores["sala professor"]==1:
                     print()
                     print("Você foi a sala dos professores na intenção do seu professor ter voltado pra lá mas quem você encontrou foi o Hage, seu professor de Modsm que foi reclamar da sua nota na Pi")
                     cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=5
-                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print("Assim,você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    contadores["sala professor"]+=1
                     print()
                     print()
                 elif contadores["andar professor"]==2:
                     print()
                     print("Você encontrou um veterano de administração")
                     cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=3
-                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print("Assim,você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    contadores["andar professor"]+=1
                     print()
                     print()
                 elif contadores["biblioteca"]==3:
                     print()
                     print("Você lembrou que esta com um livro atrasado e perderá 2 pontos de vida")
                     cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=2
-                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print("Assim, você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    contadores["biblioteca"]+=1
                     print()
                     print()
                 elif contadores["atendimento dos ninjas"]==2:
                     print()
                     print("Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 5 pontos de vida")
                     cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]+=5
-                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print("Assim,você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    contadores["atendimento dos ninjas"]+=1
                     print()
                     print()
+                
+                
+                if cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
+                    game_over = True 
                     
             else:
                 print("Sua indecisão foi sua ruína!")
