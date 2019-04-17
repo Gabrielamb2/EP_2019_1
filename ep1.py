@@ -159,7 +159,28 @@ def main():
                     print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
                     print()
                     print()
-
+                elif contadores["andar professor"]==2:
+                    print()
+                    print("Você encontrou um veterano de administração")
+                    cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=3
+                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print()
+                    print()
+                elif contadores["biblioteca"]==3:
+                    print()
+                    print("Você lembrou que esta com um livro atrasado e perderá 2 pontos de vida")
+                    cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=2
+                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print()
+                    print()
+                elif contadores["atendimento dos ninjas"]==2:
+                    print()
+                    print("Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 5 pontos de vida")
+                    cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]+=5
+                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print()
+                    print()
+                    
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
