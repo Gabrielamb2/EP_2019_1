@@ -3,7 +3,7 @@
 # Alunos: 
 # - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
-
+import random
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -86,16 +86,20 @@ def carregar_cenarios():
             "descricao": "Voce foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.",
-            "opcoes": {}
+            "opcoes": {"lutar":"e sua unica chance"},
+            "pontos de combate" : {
+                    "pontos de vida":80, 
+                    "ataques":{0:30, 1:60, 2:45}, 
+                    "defesa" : 35}
         },
         
         "seu perfil" : {
             "classe":"voce e bixo, veteranos tem vantagem contra voce, mas o nivel de do do professor cresce",
             "itens" :{},
             "pontos de combate" : {
-                    "pontos de vida":100, 
-                    "ataques":{"implorar por compaixao":8, "desculpa sou bixo nao sabia":5, "mano e uma looonga historia, mas juro q n foi culpa minha": 12}, 
-                    "defesa" : 9}
+                    "pontos de vida" :100, 
+                    "ataques":{"implorar por compaixao":30, "desculpa sou bixo nao sabia":30, "mano e uma looonga historia, mas juro q n foi culpa minha": 45}, 
+                    "defesa" : 40}
         }
     }
     nome_cenario_atual = "inicio"
@@ -146,7 +150,9 @@ def main():
             for e in cenario_atual["opcoes"]:
                 print("{0}: {1}".format(e,cenario_atual["opcoes"][e]))
             escolha = input("Para onde você quer ir agora?").strip()
-            if escolha in opcoes:
+            if escolha == "lutar":
+                break
+            elif escolha in opcoes:
                 nome_cenario_atual = escolha
                 contadores[escolha] +=1
                 if contadores["inicio"]==2:
@@ -197,15 +203,53 @@ def main():
                     contadores["atendimento dos ninjas"]+=1
                     print()
                     print()
-                
-                
                 if cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
                     game_over = True 
                     
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-                
+    
+    if escolha == "lutar" :      
+        print ()
+        print ("VAMOS LUTAR")
+        print ()
+
+        vida_prof = cenarios["professor"]["pontos de combate"]["pontos de vida"]
+        vida_player = cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]
+        defesa_prof = cenarios["professor"]["pontos de combate"]["defesa"]
+        desefa_player = cenarios["seu perfil"]["pontos de combate"]["defesa"]
+        while vida_prof > 0 and vida_player >0:
+            qual_ataque = random.randint(0,2)
+            ataque = cenarios["professor"]["pontos de combate"]["ataques"][qual_ataque]
+            if ataque > desefa_player:
+                vida_player -= ataque
+                print ("Voce foi atacado")
+            elif ataque == desefa_player:
+                vida_player -= ataque/2
+                print ("Voce foi atacado")
+            print (cenarios["seu perfil"]["pontos de combate"]["ataques"])
+            aaataque = input("escolha seu ataque")
+            contra_ataque = cenarios["seu perfil"]["pontos de combate"]["ataques"][aaataque]
+            if contra_ataque > defesa_prof:
+                vida_prof -= ataque
+                print ("Voce atacou com sucesso")
+            elif ataque == defesa_prof:
+                vida_prof -= ataque/2
+                print ("Voce atacou com sucesso")
+
+    if vida_prof <= 0:
+        print ("PARABENS, VOCE VENCEU")
+        print ("A EP FOI ADIADA POR SUA CAUSA")
+        print ("!!!!!!!!!!!")
+    elif game_over == True or vida_player <= 0:      
+        print("Você morreu!")
+        print("GAME OVER")
+        print("ZEROU O TRABALHO")
+
+
+
+            
     print("Você morreu!")
 
 
