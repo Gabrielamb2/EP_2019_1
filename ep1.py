@@ -10,7 +10,7 @@ def carregar_cenarios():
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
-                "andar do professor": "Tomar o elevador para o andar do professor",
+                "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
                 "Hall predio 2": "atravesse a rua e procure o professor no predio novo",
                 "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
@@ -25,7 +25,7 @@ def carregar_cenarios():
                 "professor": "Falar com o professor",
                 "biblioteca": "descer para o Térreo e entrar na bilbioteca",
                 "Hall predio 2": "descer, atravessar a rua até o prédio novo", 
-                "sala dos professores": "Vá para o Prédio 2 e suba para o terceiro andar ",
+                "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
                 "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento"
             }
         },
@@ -35,23 +35,23 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "Hall predio 2": "Atravesse a rua até o prédio novo", 
-                "sala dos professores": "Vá para o Prédio 2 e suba para o terceiro andar ",
+                "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
                 "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento",
-                "andar do professor": "Tomar o elevador para o andar do professor"
+                "andar professor": "Tomar o elevador para o andar do professor"
             }
         },
           "Hall predio 2":{
                   "titulo":" Uma Nova Esperanca",
                   "descricao":"Seja muito bem vindo ao novo predio",
                   "opcoes":{
-                      "sala dos professores":"subir procurar pelo professor no terceiro andar",
+                      "sala professor":"subir procurar pelo professor no terceiro andar",
                       "inicio": "tente procurar no predio 1",
                       "atendimento dos ninjas":"talvez eles tenham noticias do professor",
-                      "andar do professor": "Tomar o elevador para o andar do professor",
+                      "andar professor": "Tomar o elevador para o andar do professor",
                       "biblioteca": "ir para o prédio 1 e entrar na bilbioteca"
                       }
                   },  
-            "sala dos professores":{
+            "sala professor":{
                 "titulo":"cupula do mal",
                 "descricao":"se entrar, devera enfrentar todos os professores de uma vez",
                 "opcoes":{
@@ -59,7 +59,7 @@ def carregar_cenarios():
                     "atendimento dos ninjas":"talvez eles tenham noticias do professor",
                     "inicio": "tente procurar no predio 1",
                     "biblioteca": "ir para o prédio 1 e entrar na bilbioteca",
-                    "sala dos professores":"subir procurar pelo professor no terceiro andar"
+                    "sala professor":"subir procurar pelo professor no terceiro andar"
                         }
                 },
             "atendimento dos ninjas":{
@@ -70,7 +70,7 @@ def carregar_cenarios():
                         "andar professor": "Tomar o elevador para o andar do professor",
                         "biblioteca":"Ir para a biblioteca",
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
-                        "Sala dos professores":"subir procurar pelo professor no terceiro andar" }
+                        "Sala professor":"subir procurar pelo professor no terceiro andar" }
         },
         "professor": {
             "titulo": "O monstro do Python",
@@ -98,9 +98,8 @@ def carregar_cenarios():
 #    c= jason.load(f)
 
 
-contador_mostros=0
 def main():
-    contadores= {"inicio": 1,"Hall predio 2": 0, "sala dos professores":0, "andar professor":0, "bilioteca": 0, "atendimento dos ninjas": 0 }
+    contadores= {"inicio": 1,"Hall predio 2": 0, "sala professor":0, "andar professor":0, "biblioteca": 0, "atendimento dos ninjas": 0, "professor": 0 }
     print("Na hora do sufoco!")
     print("------------------")
     print()
@@ -131,18 +130,25 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
+            print()
             print("suas opções são:")
             for e in cenario_atual["opcoes"]:
                 print("{0}: {1}".format(e,cenario_atual["opcoes"][e]))
-            escolha = input("Para onde você quer ir agora?")
-            contadores[escolha] +=1
-
+            escolha = input("Para onde você quer ir agora?").strip()
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+                contadores[escolha] +=1
+                if contadores["inicio"]==2:
+                    print()
+                    print("Você esqueceu sua carterinha e terá que falar com a recepcionista, você perde 15 pontos de vida")
+                    cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]-=15
+                    print("você tem {0} pontos de vida".format(cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]))
+                    print()
+                    print()
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-            
+                
     print("Você morreu!")
 
 
