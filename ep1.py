@@ -4,6 +4,9 @@
 # - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 import random
+#import colorama 
+#from colorama import Fore
+#print(Fore.(cor)+...)
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -21,6 +24,12 @@ def carregar_cenarios():
         "explorar o saguao mais a fundo": {
                 "titulo": "Explorando o Saguao" ,
                 "descricao": "ao explorar esse andar você pode encontrar coisas inesperadas"},
+                "opcoes": { "escada": "virar a esquerda antes da catraca e entrar na escada de emergencia",
+                           "escada principal": "depois da catraca virar a direita e encontrar a escada principal",
+                           "auditório": "passar a sala do piano e entrar no auditório"
+                           }
+                }, 
+                
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
@@ -247,10 +256,6 @@ def main():
         print("GAME OVER")
         print("ZEROU O TRABALHO")
 
-
-
-            
-    print("Você morreu!")
 
 
 
