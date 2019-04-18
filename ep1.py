@@ -5,8 +5,8 @@
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 import json
 import random
-import colorama 
-from colorama import Fore
+#import colorama 
+#from colorama import Fore
 #print(Fore.(cor)+...)
 
 with open ('cenario.json' , 'r', encoding="utf8") as arquivo:
