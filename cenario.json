@@ -5,9 +5,7 @@
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
-                "Hall predio 2": "atravesse a rua e procure o professor no predio novo",
-                "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
-                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento"
+                "Hall predio 2": "atravesse a rua e procure o professor no predio novo"
             }
         },
         "andar professor": {
@@ -17,9 +15,7 @@
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "professor": "Falar com o professor",
                 "biblioteca": "descer para o Térreo e entrar na bilbioteca",
-                "Hall predio 2": "descer, atravessar a rua até o prédio novo", 
-                "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
-                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento"
+                "Hall predio 2": "descer, atravessar a rua até o prédio novo",
             }
         },
         "biblioteca": {
@@ -28,8 +24,6 @@
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "Hall predio 2": "Atravesse a rua até o prédio novo", 
-                "sala professor": "Vá para o Prédio 2 e suba para o terceiro andar ",
-                "atendimento dos ninjas": "Vamos ver se os ninjas tem noticia do professor no atendimento",
                 "andar professor": "Tomar o elevador para o andar do professor"
             }
         },
@@ -40,8 +34,6 @@
                       "sala professor":"subir procurar pelo professor no terceiro andar",
                       "inicio": "tente procurar no predio 1",
                       "atendimento dos ninjas":"talvez eles tenham noticias do professor",
-                      "andar professor": "Tomar o elevador para o andar do professor",
-                      "biblioteca": "ir para o prédio 1 e entrar na bilbioteca"
                       }
                   },  
             "sala professor":{
@@ -50,9 +42,7 @@
                 "opcoes":{
                     "Hall predio 2": "Volte ao terrio e repense sua busca",
                     "atendimento dos ninjas":"talvez eles tenham noticias do professor",
-                    "inicio": "tente procurar no predio 1",
-                    "biblioteca": "ir para o prédio 1 e entrar na bilbioteca",
-                    "sala professor":"subir procurar pelo professor no terceiro andar"
+                    "inicio": "tente procurar no predio 1"
                         }
                 },
             "atendimento dos ninjas":{
@@ -60,8 +50,6 @@
                 "descricao": "",
                 "opcoes": {
                         "inicio": "Voltar para o saguao de entrada", 
-                        "andar professor": "Tomar o elevador para o andar do professor",
-                        "biblioteca":"Ir para a biblioteca",
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
                         "Sala professor":"subir procurar pelo professor no terceiro andar" 
 			}
@@ -69,7 +57,11 @@
         "professor": {
             "titulo": "O monstro do Python",
             "descricao": "Voce foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e devorou sua alma.",
-            "opcoes": { }
+            "opcoes": {"lutar":"e sua unica chance"},
+            "pontos de combate" : {
+                    "pontos de vida":80, 
+                    "ataques":{0:30, 1:60, 2:45}, 
+                    "defesa" : 35}
         },
         
         "seu perfil" : {
