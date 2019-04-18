@@ -30,7 +30,7 @@ def main():
     
     game_over = False
     while not game_over:
-        cenario_atual = cenarios[nome_cenario_atual]
+        cenario_atual = cenario[nome_cenario_atual]
         # Aluno A: substitua este comentário pelo código para imprimir 
         # o cenário atual.
         print()
