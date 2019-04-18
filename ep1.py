@@ -9,7 +9,7 @@ import random
 #from colorama import Fore
 #print(Fore.(cor)+...)
 
-with open ('cenario.json' , 'r', encoding="utf8") as arquivo:
+with open ('cenario1.json' , 'r', encoding="utf8") as arquivo:
      cenario= json.load(arquivo)
     
 #print (cenario['inicio'])como chamar o json 
