@@ -3,12 +3,12 @@
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
-                "andar professor": "Tomar o elevador para o andar do professor",
+                "andar do professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
                 "Hall predio 2": "atravesse a rua e procure o professor no predio novo"
             }
         },
-        "andar professor": {
+        "andar do professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
             "opcoes": {
@@ -24,19 +24,19 @@
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "Hall predio 2": "Atravesse a rua até o prédio novo", 
-                "andar professor": "Tomar o elevador para o andar do professor"
+                "andar do professor": "Tomar o elevador para o andar do professor"
             }
         },
           "Hall predio 2":{
                   "titulo":" Uma Nova Esperanca",
                   "descricao":"Seja muito bem vindo ao novo predio",
                   "opcoes":{
-                      "sala professor":"subir procurar pelo professor no terceiro andar",
+                      "sala dos professores":"subir procurar pelo professor no terceiro andar",
                       "inicio": "tente procurar no predio 1",
                       "atendimento dos ninjas":"talvez eles tenham noticias do professor"
                       }
                   },  
-            "sala professor":{
+            "sala dos professores":{
                 "titulo":"cupula do mal",
                 "descricao":"se entrar, devera enfrentar todos os professores de uma vez",
                 "opcoes":{
@@ -51,7 +51,7 @@
                 "opcoes": {
                         "inicio": "Voltar para o saguao de entrada", 
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
-                        "Sala professor":"subir procurar pelo professor no terceiro andar" 
+                        "Sala dos professores":"subir procurar pelo professor no terceiro andar" 
 			}
        		 },
         "professor": {
@@ -69,7 +69,7 @@
             "itens" :{},
             "pontos de combate" : {
                     "pontos de vida":100, 
-                    "ataques":{"implorar por compaixao":8, "desculpa sou bixo nao sabia":5, "mano é uma looonga historia, mas juro q n foi culpa minha": 12}, 
+                    "ataques":{"implorar por compaixao":30, "desculpa sou bixo nao sabia":45, "mano é uma looonga historia, mas juro q n foi culpa minha": 35}, 
                     "defesa" : 9}
         }
     }
