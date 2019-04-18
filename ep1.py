@@ -103,6 +103,12 @@ def main():
                     contadores["atendimento dos ninjas"]+=1
                     print()
                     print()
+ #teleporte: 
+                elif contadores["atendimento dos ninjas"]==1:
+                    print()
+                    print("você encontrou um teletransporte")
+                    escolha = input("Para onde você quer ir agora?").strip()
+                    
                 if cenario["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
                     game_over = True 
                     
