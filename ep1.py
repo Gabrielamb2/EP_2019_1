@@ -103,7 +103,7 @@ def main():
                     contadores["atendimento dos ninjas"]+=1
                     print()
                     print()
-                if cenarios["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
+                if cenario["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
                     game_over = True 
                     
             else:
