@@ -46,8 +46,8 @@
                         }
                 },
             "atendimento dos ninjas":{
-                "titulo": "",
-                "descricao": "",
+                "titulo": "c",
+                "descricao": "c",
                 "opcoes": {
                         "inicio": "Voltar para o saguao de entrada", 
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
@@ -60,7 +60,7 @@
             "opcoes": {"lutar":"e sua unica chance"},
             "pontos de combate" : {
                     "pontos de vida":80, 
-                    "ataques":{0:30, 1:60, 2:45}, 
+                    "ataques":[30,60,45], 
                     "defesa" : 35}
         },
         

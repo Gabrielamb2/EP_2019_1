@@ -147,9 +147,6 @@ def main():
         print("GAME OVER")
         print("ZEROU O TRABALHO")
 
-
-
-
 # Programa principal.
 if __name__ == "__main__":
     main()
