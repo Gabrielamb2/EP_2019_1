@@ -9,8 +9,8 @@ import random
 
 with open ('cenario1.json' , 'r', encoding="utf8") as arquivo:
      cenario= json.load(arquivo)
-with open ('premio_e_monstros.json' , 'r', encoding="utf8") as arquivo:
-     encontros = json.load(arquivo)
+with open ('premio_e_monstros.json' , 'r', encoding="utf8") as arquivo2:
+     encontros = json.load(arquivo2)
 
 def main():
     nome_cenario_atual = "inicio"
@@ -22,9 +22,9 @@ def main():
     print()
     print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
-        "adiamento do EP (boa sorte...)")
+        "adiamento do EP")
     print()
-    print("Procure bem pelo professor, nem sempre uma olhada apenas basta...")
+    print("Procure bem pelo professor, e saiba que nem sempre uma olhada apenas basta...")
     print ("Boa Sorte")
     print()
     
@@ -48,10 +48,8 @@ def main():
             break
         elif escolha in opcoes:
             encontro(escolha)
-            if encontros["contador"]["sala dos professores"]==2:
-                nome_cenario_atual = "professor"  
-            else:
-                nome_cenario_atual = escolha
+            nome_cenario_atual = encontro(escolha)
+            
             if cenario["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
                 game_over = True 
                     
@@ -80,7 +78,7 @@ def main():
                 print ("Voce foi atacado")
             else:
                 print ("Voce se defendeu, sua vez")
-            print ("Suas opcoes de ataque")
+            print ("Suas opcoes de ataque:")
             for e in cenario["seu perfil"]["pontos de combate"]["ataques"]:
                 print (e)
             ataque = input("escolha seu ataque:")
@@ -106,24 +104,29 @@ def main():
         print ("!!!!!!!!!!!")
 def encontro(local):
     encontros["contador"][local]+=1
-    if encontros["contador"][local] >=encontros["reacoes"][local]["start at"]:
-      cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += encontros["reacoes"][local]["dano"]
-      print("-----------")
-      print (encontros["reacoes"][local]["frase"])
-      print("Assim,você tem {0} pontos de vida".format(cenario["seu perfil"]["pontos de combate"]["pontos de vida"]))
-      print("-----------")
-    elif encontros["contador"]["sala dos professores"]==2:
+    if encontros["contador"]["sala dos professores"]==2:
       print()
       print("FINALMENTE!")
       print ("Agora voce se ve frente a frente com o profesor")
       print("Para o combate você tem {0} pontos de vida".format(cenario["seu perfil"]["pontos de combate"]["pontos de vida"]))
-      print() 
-    if local == "atendimento dos ninjas" and encontros["contador"][local]:
-                    print()
-                    print("você encontrou um teletransporte")
-                    print("Tome cuidado para escrever o local da maneira correta, nao quer se perder pela faculdade")
-                    escolha = input("Para onde você quer ir agora?").strip()
-
+      print()
+      novo_local = "professor"
+      return novo_local
+    elif local == "atendimento dos ninjas" and encontros["contador"][local]== 2:
+        print()
+        print("você encontrou um teletransporte")
+        print("Tome cuidado para escrever o local da maneira correta, nao quer se perder pela faculdade")
+        teletransporte = input("Para onde você quer ir agora?").strip()
+        return teletransporte
+    elif encontros["contador"][local] >=encontros["reacoes"][local]["start at"]:
+        cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += encontros["reacoes"][local]["dano"]
+        print ()
+        print ()
+        print("__________________")
+        print (encontros["reacoes"][local]["frase"])
+        print("Assim,você tem {0} pontos de vida".format(cenario["seu perfil"]["pontos de combate"]["pontos de vida"]))
+        print("__________________")
+        return local
 # Programa principal.
 if __name__ == "__main__":
     main()
