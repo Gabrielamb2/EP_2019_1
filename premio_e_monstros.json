@@ -1,0 +1,42 @@
+{
+ "contador": {"inicio": 1,"Hall predio 2": 0, "sala dos professores":0, "andar do professor":0, "biblioteca": 0, "atendimento dos ninjas": 0, "professor": 0 },
+ "reacoes":{"inicio": {"frase":"Você esqueceu sua carterinha e terá que falar com a recepcionista, você perde 15 pontos de vida",
+                       "dano":-10,
+                       "contador":0,
+                       "start at":3},
+            "Hall predio 2": {"frase":"Você estava com pressa e esqueceu da catraca e ela bateu em você, fazendo com que se machucasse e perdesse 2 pontos de vida",
+                       "dano":-2,
+                       "start at":2},
+            "sala dos professores": {"frase":"Você foi a sala dos professores na intenção do seu professor ter voltado pra lá mas quem você encontrou foi o Hage, seu professor de Modsm que foi reclamar da sua nota na Pi",
+                       "dano":-5,
+                       "start at":1},
+            "andar do professor": {"frase":"Você encontrou um veterano de administração, eles tem vantagem contra bixos",
+                       "dano":-5,
+                       "start at":1},
+            "biblioteca": {"frase":"Você lembrou que esta com um livro atrasado e pagara 3 pontos de vida de multa por dia",
+                       "dano":-3,
+                       "start at":3},
+            "atendimento dos ninjas": {"frase":"Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 5 pontos de vida",
+                       "dano": 5,
+                       "start at":1},
+            "professor": {"frase":"",
+                       "dano":0,
+                       "start at":100}
+     }
+ }
+
+
+  
+
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
