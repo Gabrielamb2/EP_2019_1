@@ -7,7 +7,7 @@
             "Hall predio 2": {"frase":"Você estava com pressa e esqueceu da catraca e ela bateu em você, fazendo com que se machucasse e perdesse 2 pontos de vida",
                        "dano":-2,
                        "start at":2},
-            "sala dos professores": {"frase":"Você foi a sala dos professores na intenção do seu professor ter voltado pra lá mas quem você encontrou foi o Hage, seu professor de Modsm que foi reclamar da sua nota na Pi",
+            "sala dos professores": {"frase":"no momento o unico professor la e o hage, e voce tem vergonhas da sua nota em modsim, mas ele disse que o professor pode passarpor la mais tarde",
                        "dano":-5,
                        "start at":1},
             "andar do professor": {"frase":"Você encontrou um veterano de administração, eles tem vantagem contra bixos",
@@ -17,7 +17,7 @@
                        "dano":-3,
                        "start at":3},
             "atendimento dos ninjas": {"frase":"Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 5 pontos de vida",
-                       "dano": 5,
+                       "dano": 10,
                        "start at":1},
             "professor": {"frase":"",
                        "dano":0,
@@ -25,18 +25,3 @@
      }
  }
 
-
-  
-
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
