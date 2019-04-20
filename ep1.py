@@ -127,6 +127,8 @@ def encontro(local):
         print("Assim,você tem {0} pontos de vida".format(cenario["seu perfil"]["pontos de combate"]["pontos de vida"]))
         print("__________________")
         return local
+    else:
+        return local
 # Programa principal.
 if __name__ == "__main__":
     main()
