@@ -141,16 +141,19 @@ def inventario(local):
         else:
             cenario [local] ["reacoes"] 
             if cenario["seu perfil"]["item"] == "":
-                print ("Voce esqueceu sua mochila hoje, entao so pode carregar um item por vez")
-                print ("Quando encontrar algo, pode escolher leva-lo com vc ou deixar la")
+                print ("Você esqueceu sua mochila hoje, entao so pode carregar um item por vez")
+                print ("Quando encontrar algo, pode escolher leva-lo com você ou deixar la")
                 print("__________________")
                 print ()
-            print("Ao sair, voce encontrou {0}".format(cenario[local]["reacoes"]["item"]))
-            sim_ou_nao = input("voce deseja levar com voce? (y/n)").strip()
+            print("Ao sair, você encontrou {0}".format(cenario[local]["reacoes"]["item"]))
+            sim_ou_nao = input("Você deseja levar com voce? (y/n)").strip()
             if sim_ou_nao == "y":
                 cenario["seu perfil"]["item"] = cenario[local]["reacoes"]["item"]
             else:
-                print ("entao voce continua carregando {0}".format(cenario["seu perfil"]["item"]))
+                if cenario["seu perfil"]["item"] == "" :
+                    print("Você não possui nada")
+                else:
+                    print ("Entao você continua carregando {0}".format(cenario["seu perfil"]["item"]))
 # Programa principal.
 if __name__ == "__main__":
     main()
