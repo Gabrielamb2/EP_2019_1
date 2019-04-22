@@ -19,7 +19,8 @@
             "opcoes": {
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "biblioteca": "descer para o Térreo e entrar na bilbioteca",
-                "Hall predio 2": "descer, atravessar a rua até o prédio novo"},
+                "Hall predio 2": "descer, atravessar a rua até o prédio novo",
+                "lutar": "Você vai ter coragem de enfrentar seu professor?"},
                 "reacoes":{"frase":"Você encontrou um veterano de administração, eles tem vantagem contra bixos",
                        "dano":-5,
                        "start at":1,
@@ -72,7 +73,7 @@
                         "inicio": "Voltar para o saguao de entrada", 
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
                         "sala dos professores":"subir procurar pelo professor no terceiro andar"},
-               "reacoes": {"frase":"Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 5 pontos de vida",
+               "reacoes": {"frase":"Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 10 pontos de vida",
                        "dano": 10,
                        "start at":1,
                        "chave": "suborno em comida",

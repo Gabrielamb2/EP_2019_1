@@ -41,7 +41,7 @@ def main():
        
 
         print()
-        print(Fore.BLUE+"suas opções são:")
+        print(Fore.BLUE+"Suas opções são:")
         for e in cenario_atual["opcoes"]:
             print("{0}: {1}".format(e,cenario_atual["opcoes"][e]))
         escolha = input(Fore.BLACK+"Para onde você quer ir agora?").strip()
@@ -73,25 +73,25 @@ def main():
             print ("Ele tentara um ataque")
             if ataque > desefa_player:
                 vida_player -= ataque
-                print ("Voce foi atacado")
+                print ("Você foi atacado")
             elif ataque == desefa_player:
                 vida_player -= ataque/2
-                print ("Voce foi atacado")
+                print ("Você foi atacado")
             else:
-                print ("Voce se defendeu, sua vez")
-            print ("Suas opcoes de ataque:")
+                print ("Você se defendeu, sua vez")
+            print ("Suas opções de ataque:")
             for e in cenario["seu perfil"]["pontos de combate"]["ataques"]:
                 print (e)
-            ataque = input("escolha seu ataque:")
+            ataque = input("Escolha seu ataque:")
             contra_ataque = cenario["seu perfil"]["pontos de combate"]["ataques"][ataque]
             if contra_ataque > defesa_prof:
                 vida_prof -= contra_ataque
-                print ("Voce atacou com sucesso")
+                print ("Você atacou com sucesso")
             elif ataque == defesa_prof:
                 vida_prof -= contra_ataque/2
-                print ("Voce atacou com sucesso")
+                print ("Você atacou com sucesso")
             else:
-                print ("ele se defendeu")
+                print ("Ele se defendeu")
         
     if game_over == True or vida_player <= 0:      
         print(Back.RED+"Você morreu!")
@@ -106,15 +106,15 @@ def encontro(local):
     if cenario["contador"]["sala dos professores"]==2:
       print()
       print("FINALMENTE!")
-      print ("Agora voce se ve frente a frente com o profesor")
+      print ("Agora você se ve frente a frente com o profesor")
       print("Para o combate você tem {0} pontos de vida".format(cenario["seu perfil"]["pontos de combate"]["pontos de vida"]))
       print()
       novo_local = "professor"
       return novo_local
     elif local == "atendimento dos ninjas" and cenario["contador"][local]== 2:
         print()
-        print("você encontrou um teletransporte")
-        print("Tome cuidado para escrever o local da maneira correta, nao quer se perder pela faculdade")
+        print("Você encontrou um teletransporte")
+        print("Tome cuidado para escrever o local da maneira correta, não quer se perder pela faculdade")
         teletransporte = input("Para onde você quer ir agora?").strip()
         return teletransporte
     elif cenario["contador"][local] >= cenario[local]["reacoes"]["start at"]: 
@@ -137,7 +137,7 @@ def inventario(local):
        
     else:
         if cenario["seu perfil"]["item"] == cenario[local]["reacoes"]["chave"]:
-            print ("Para sua sorte, voce tinha {0} entao nao sofrera dano dessa vez".format(cenario[local]["reacoes"]["chave"]))
+            print ("Para sua sorte, voce tinha {0} entao não sofrera dano dessa vez".format(cenario[local]["reacoes"]["chave"]))
         else:
             cenario [local] ["reacoes"] 
             if cenario["seu perfil"]["item"] == "":
