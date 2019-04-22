@@ -5,8 +5,13 @@
             "opcoes": {
                 "andar do professor": "Tomar o elevador para o andar onde fica a sala do professor",
                 "biblioteca": "Ir para a biblioteca",
-                "Hall predio 2": "atravesse a rua e procure o professor no predio novo"
-            }
+                "Hall predio 2": "atravesse a rua e procure o professor no predio novo"},
+            "reacoes":{"frase":"Você esqueceu sua carterinha e terá que falar com a recepcionista, você perde 15 pontos de vida",
+                       "dano":-10,
+                       "contador":0,
+                       "start at":3,
+                       "chave": "a sua carteira",
+                       "item":"uma prova gabaritada"}
         },
         "andar do professor": {
             "titulo": "Andar do desespero",
@@ -14,8 +19,12 @@
             "opcoes": {
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "biblioteca": "descer para o Térreo e entrar na bilbioteca",
-                "Hall predio 2": "descer, atravessar a rua até o prédio novo"
-            }
+                "Hall predio 2": "descer, atravessar a rua até o prédio novo"},
+                "reacoes":{"frase":"Você encontrou um veterano de administração, eles tem vantagem contra bixos",
+                       "dano":-5,
+                       "start at":1,
+                       "chave":"o mapa das salas",
+                       "item":"aquele maltido livro do mes passado"}
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -23,8 +32,12 @@
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "Hall predio 2": "Atravesse a rua até o prédio novo", 
-                "andar do professor": "Tomar o elevador para o andar do professor"
-            }
+                "andar do professor": "Tomar o elevador para o andar do professor"},
+            "reacoes":{"frase":"Você lembrou que esta com um livro atrasado e pagara 3 pontos de vida de multa por dia",
+                       "dano":-3,
+                       "start at":3,
+                       "chave":"aquele maltido livro do mes passado",
+                       "item":"a sua carteira"}
         },
           "Hall predio 2":{
                   "titulo":" Uma Nova Esperanca",
@@ -32,17 +45,25 @@
                   "opcoes":{
                       "sala dos professores":"subir procurar pelo professor no terceiro andar",
                       "inicio": "tente procurar no predio 1",
-                      "atendimento dos ninjas":"talvez eles tenham noticias do professor"
-                      }
-                  },  
+                      "atendimento dos ninjas":"talvez eles tenham noticias do professor"},
+                  "reacoes" :{"frase":"Você estava com pressa e esqueceu da catraca e ela bateu em você, fazendo com que se machucasse e perdesse 2 pontos de vida",
+                       "dano":-2,
+                       "start at":2,
+                       "chave":"a sua carteira",
+                       "item":"o mapa das salas"}
+        },  
             "sala dos professores":{
                 "titulo":"cupula do mal",
                 "descricao":"se entrar, devera enfrentar todos os professores de uma vez",
                 "opcoes":{
                     "Hall predio 2": "Volte ao terrio e repense sua busca",
                     "atendimento dos ninjas":"talvez eles tenham noticias do professor",
-                    "inicio": "tente procurar no predio 1"
-                        }
+                    "inicio": "tente procurar no predio 1"},
+                 "reacoes":{"frase":"no momento o unico professor la e o hage, e voce tem vergonhas da sua nota em modsim, mas ele disse que o professor pode passarpor la mais tarde",
+                       "dano":-5,
+                       "start at":1,
+                       "chave":"uma prova gabaritada",
+                       "item":"suborno em comida"}
                 },
             "atendimento dos ninjas":{
                 "titulo": "Os mestres ancioes",
@@ -50,8 +71,12 @@
                 "opcoes": {
                         "inicio": "Voltar para o saguao de entrada", 
                         "Hall predio 2":"Volte ao terrio e repense sua busca", 
-                        "sala dos professores":"subir procurar pelo professor no terceiro andar" 
-			}
+                        "sala dos professores":"subir procurar pelo professor no terceiro andar"},
+               "reacoes": {"frase":"Você encontrou um veterano de engenharia que te deu algumas dicas para o Ep, assim aumentando 5 pontos de vida",
+                       "dano": 10,
+                       "start at":1,
+                       "chave": "suborno em comida",
+                       "item":"ep do veterano"}
        		 },
         "professor": {
             "titulo": "O monstro do Python",
@@ -69,7 +94,8 @@
             "pontos de combate" : {
                     "pontos de vida":100, 
                     "ataques":{"implorar por compaixao":40, "desculpa sou bixo nao sabia":35, "mano e uma looonga historia": 35, "juro que nao e culpa minha":20}, 
-                    "defesa" : 45}
+                    "defesa" : 45},
+            "item":""
         }
     }
     
