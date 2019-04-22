@@ -24,7 +24,7 @@
                        "dano":-5,
                        "start at":1,
                        "chave":"o mapa das salas",
-                       "item":"aquele maltido livro do mes passado"}
+                       "item":"aquele maldito livro do mes passado"}
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -36,7 +36,7 @@
             "reacoes":{"frase":"Você lembrou que esta com um livro atrasado e pagara 3 pontos de vida de multa por dia",
                        "dano":-3,
                        "start at":3,
-                       "chave":"aquele maltido livro do mes passado",
+                       "chave":"aquele maldito livro do mes passado",
                        "item":"a sua carteira"}
         },
           "Hall predio 2":{
