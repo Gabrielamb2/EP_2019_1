@@ -5,13 +5,11 @@
 # - aluno A: Antonio Fonseca, antonioarf@al.insper.edu.br
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 
-#import
 import json
 import random
 import colorama 
 from colorama import Back, Fore
 
-#json
 with open ('cenario1.json' , 'r', encoding="utf8") as arquivo:
      cenario= json.load(arquivo)
 
@@ -143,7 +141,7 @@ def inventario(local):
         else:
             cenario [local] ["reacoes"] 
             if cenario["seu perfil"]["item"] == "":
-                print ("Voce esqueceu sua mochila hoe, entao so pode carregar um item por vez")
+                print ("Voce esqueceu sua mochila hoje, entao so pode carregar um item por vez")
                 print ("Quando encontrar algo, pode escolher leva-lo com vc ou deixar la")
                 print("__________________")
                 print ()
