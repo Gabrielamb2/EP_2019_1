@@ -9,8 +9,6 @@ import random
 
 with open ('cenario1.json' , 'r', encoding="utf8") as arquivo:
      cenario= json.load(arquivo)
-with open ('premio_e_monstros.json' , 'r', encoding="utf8") as arquivo2:
-     encontros = json.load(arquivo2)
 
 def main():
     nome_cenario_atual = "inicio"
@@ -103,8 +101,8 @@ def main():
         print ("A EP FOI ADIADA POR SUA CAUSA")
         print ("!!!!!!!!!!!")
 def encontro(local):
-    encontros["contador"][local]+=1
-    if encontros["contador"]["sala dos professores"]==2:
+    cenario["contador"][local]+=1
+    if cenario["contador"]["sala dos professores"]==2:
       print()
       print("FINALMENTE!")
       print ("Agora voce se ve frente a frente com o profesor")
@@ -112,26 +110,26 @@ def encontro(local):
       print()
       novo_local = "professor"
       return novo_local
-    elif local == "atendimento dos ninjas" and encontros["contador"][local]== 2:
+    elif local == "atendimento dos ninjas" and cenario["contador"][local]== 2:
         print()
         print("você encontrou um teletransporte")
         print("Tome cuidado para escrever o local da maneira correta, nao quer se perder pela faculdade")
         teletransporte = input("Para onde você quer ir agora?").strip()
         return teletransporte
-    elif encontros["contador"][local] >=encontros["reacoes"][local]["start at"]:
-        cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += encontros["reacoes"][local]["dano"]
+    elif cenario["contador"][local] >= cenario[local]["reacoes"]["start at"]: 
+        cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += cenario[local]["reacoes"]["dano"]
         print ()
         print ()
         print("__________________")
-        print (encontros["reacoes"][local]["frase"])
+        print (cenario[local]["reacoes"]["frase"])
         print("Assim,você tem {0} pontos de vida".format(cenario["seu perfil"]["pontos de combate"]["pontos de vida"]))
         print("__________________")
         return local
     else:
         return local
 def inventario(local):
-   if cenario["seu perfil"]["item"] == encontros["reacoes"][local]["chave"]:
-       print ("Para sua sorte, voce tinha {0} entao nao sofrera dano dessa vez".format(encontros["reacoes"][local]["chave"]))
+   if cenario["seu perfil"]["item"] == cenario[local]["reacoes"]["chave"]:
+       print ("Para sua sorte, voce tinha {0} entao nao sofrera dano dessa vez".format(cenario[local]["reacoes"]["chave"]))
    else:
        encontro(local)
        if cenario["seu perfil"]["item"] == "":
@@ -139,10 +137,10 @@ def inventario(local):
            print ("Quando encontrar algo, pode escolher leva-lo com vc ou deixar la")
            print("__________________")
            print ()
-       print("Ao sair, voce encontrou {0}".format(encontros["reacoes"][local]["item"]))
+       print("Ao sair, voce encontrou {0}".format(cenario[local]["reacoes"]["item"]))
        sim_ou_nao = input("voce deseja levar com voce? (y/n)").strip()
        if sim_ou_nao == "y":
-           cenario["seu perfil"]["item"] = encontros["reacoes"][local]["item"]
+           cenario["seu perfil"]["item"] = cenario[local]["reacoes"]["item"]
        else:
            print ("entao voce continua carregando {0}".format(cenario["seu perfil"]["item"]))
 # Programa principal.

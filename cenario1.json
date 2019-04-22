@@ -96,6 +96,15 @@
                     "ataques":{"implorar por compaixao":40, "desculpa sou bixo nao sabia":35, "mano e uma looonga historia": 35, "juro que nao e culpa minha":20}, 
                     "defesa" : 45},
             "item":""
+        },
+        "contador": {
+        "inicio": 1,
+        "Hall predio 2": 0, 
+        "sala dos professores":0, 
+        "andar do professor":0, 
+        "biblioteca": 0, 
+        "atendimento dos ninjas": 0, 
+        "professor": 0 
         }
     }
     
