@@ -6,7 +6,8 @@
 # - aluno B: Gabriela Moreno Boriero, gabrielamb2@al.insper.edu.br
 import json
 import random
-
+import colorama 
+from colorama import Back, Fore
 with open ('cenario1.json' , 'r', encoding="utf8") as arquivo:
      cenario= json.load(arquivo)
 
@@ -31,17 +32,17 @@ def main():
         cenario_atual = cenario[nome_cenario_atual]
      
         print()
-        print (cenario_atual["titulo"])
+        print (Fore.GREEN+cenario_atual["titulo"])
         print ("-"*len(cenario_atual["titulo"]))
         print (cenario_atual["descricao"])      
         opcoes = cenario_atual['opcoes']
        
 
         print()
-        print("suas opções são:")
+        print(Fore.BLUE+"suas opções são:")
         for e in cenario_atual["opcoes"]:
             print("{0}: {1}".format(e,cenario_atual["opcoes"][e]))
-        escolha = input("Para onde você quer ir agora?").strip()
+        escolha = input(Fore.BLACK+"Para onde você quer ir agora?").strip()
         if escolha == "lutar":
             break
         elif escolha in opcoes:
@@ -52,7 +53,7 @@ def main():
                 game_over = True 
                     
         else:
-            print("Sua indecisão foi sua ruína!")
+            print(Back.RED+"Sua indecisão foi sua ruína!")
             game_over = True
     
     if escolha == "lutar" :      
@@ -93,11 +94,11 @@ def main():
     
         
     if game_over == True or vida_player <= 0:      
-        print("Você morreu!")
+        print(Back.RED+"Você morreu!")
         print("GAME OVER")
         print("ZEROU O TRABALHO")
     else:
-        print ("PARABENS, VOCE VENCEU")
+        print (Back.GREEN+"PARABENS, VOCE VENCEU")
         print ("A EP FOI ADIADA POR SUA CAUSA")
         print ("!!!!!!!!!!!")
 def encontro(local):
@@ -128,21 +129,28 @@ def encontro(local):
     else:
         return local
 def inventario(local):
-   if cenario["seu perfil"]["item"] == cenario[local]["reacoes"]["chave"]:
-       print ("Para sua sorte, voce tinha {0} entao nao sofrera dano dessa vez".format(cenario[local]["reacoes"]["chave"]))
-   else:
-       encontro(local)
-       if cenario["seu perfil"]["item"] == "":
-           print ("Voce esqueceu sua mochila hoe, entao so pode carregar um item por vez")
-           print ("Quando encontrar algo, pode escolher leva-lo com vc ou deixar la")
-           print("__________________")
-           print ()
-       print("Ao sair, voce encontrou {0}".format(cenario[local]["reacoes"]["item"]))
-       sim_ou_nao = input("voce deseja levar com voce? (y/n)").strip()
-       if sim_ou_nao == "y":
-           cenario["seu perfil"]["item"] = cenario[local]["reacoes"]["item"]
-       else:
-           print ("entao voce continua carregando {0}".format(cenario["seu perfil"]["item"]))
+    if local == "atendimento dos ninjas":
+        if cenario["seu perfil"]["item"]== cenario[local]["reacoes"]["chave"]:
+            cenario [local] ["reacoes"] 
+            print("como voce trouxe comida, eles ajudam em dobro")
+            cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += cenario[local]["reacoes"]["dano"]
+       
+    else:
+        if cenario["seu perfil"]["item"] == cenario[local]["reacoes"]["chave"]:
+            print ("Para sua sorte, voce tinha {0} entao nao sofrera dano dessa vez".format(cenario[local]["reacoes"]["chave"]))
+        else:
+            cenario [local] ["reacoes"] 
+            if cenario["seu perfil"]["item"] == "":
+                print ("Voce esqueceu sua mochila hoe, entao so pode carregar um item por vez")
+                print ("Quando encontrar algo, pode escolher leva-lo com vc ou deixar la")
+                print("__________________")
+                print ()
+            print("Ao sair, voce encontrou {0}".format(cenario[local]["reacoes"]["item"]))
+            sim_ou_nao = input("voce deseja levar com voce? (y/n)").strip()
+            if sim_ou_nao == "y":
+                cenario["seu perfil"]["item"] = cenario[local]["reacoes"]["item"]
+            else:
+                print ("entao voce continua carregando {0}".format(cenario["seu perfil"]["item"]))
 # Programa principal.
 if __name__ == "__main__":
     main()
