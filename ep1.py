@@ -47,7 +47,7 @@ def main():
         if escolha == "lutar":
             break
         elif escolha in opcoes:
-            encontro(escolha)
+            inventario(escolha)
             nome_cenario_atual = encontro(escolha)
             
             if cenario["seu perfil"]["pontos de combate"]["pontos de vida"]<=0:
@@ -129,6 +129,22 @@ def encontro(local):
         return local
     else:
         return local
+def inventario(local):
+   if cenario["seu perfil"]["item"] == encontros["reacoes"][local]["chave"]:
+       print ("Para sua sorte, voce tinha {0} entao nao sofrera dano dessa vez".format(encontros["reacoes"][local]["chave"]))
+   else:
+       encontro(local)
+       if cenario["seu perfil"]["item"] == "":
+           print ("Voce esqueceu sua mochila hoe, entao so pode carregar um item por vez")
+           print ("Quando encontrar algo, pode escolher leva-lo com vc ou deixar la")
+           print("__________________")
+           print ()
+       print("Ao sair, voce encontrou {0}".format(encontros["reacoes"][local]["item"]))
+       sim_ou_nao = input("voce deseja levar com voce? (y/n)").strip()
+       if sim_ou_nao == "y":
+           cenario["seu perfil"]["item"] = encontros["reacoes"][local]["item"]
+       else:
+           print ("entao voce continua carregando {0}".format(cenario["seu perfil"]["item"]))
 # Programa principal.
 if __name__ == "__main__":
     main()
