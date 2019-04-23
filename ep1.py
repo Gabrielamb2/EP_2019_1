@@ -67,35 +67,39 @@ def main():
         defesa_prof = cenario["professor"]["pontos de combate"]["defesa"]
         desefa_player = cenario["seu perfil"]["pontos de combate"]["defesa"]
         while vida_prof > 0 and vida_player >0:
-            qual_ataque = random.randint(0,2)
-            ataque = cenario["professor"]["pontos de combate"]["ataques"][qual_ataque]
-            print ("Ele tentara um ataque")
-            if ataque > desefa_player:
-                vida_player -= ataque
-                print("...")
-                print ("Você foi atacado")
-                print()
-            elif ataque == desefa_player:
-                vida_player -= ataque/2
-                print ("...")
-                print ("Você foi atacado")
-                print()
-            else:
-                print ("Você se defendeu! Sua vez!")
-            print ("Suas opções de ataque:")
-            for e in cenario["seu perfil"]["pontos de combate"]["ataques"]:
-                print ("*{0}".format (e))
-            ataque = input("Escolha seu ataque:")
-            contra_ataque = cenario["seu perfil"]["pontos de combate"]["ataques"][ataque]
-            if contra_ataque > defesa_prof:
-                vida_prof -= contra_ataque
-                print ("Você atacou com sucesso")
-            elif ataque == defesa_prof:
-                vida_prof -= contra_ataque/2
-                print ("Você atacou com sucesso")
-            else:
-                print()
-                print ("Ele se defendeu")
+            if cenario["seu perfil"]["item"]== "ep do veterano":
+                break
+                game_over = True
+            else:    
+                qual_ataque = random.randint(0,2)
+                ataque = cenario["professor"]["pontos de combate"]["ataques"][qual_ataque]
+                print ("Ele tentara um ataque")
+                if ataque > desefa_player:
+                    vida_player -= ataque
+                    print("...")
+                    print ("Você foi atacado")
+                    print()
+                elif ataque == desefa_player:
+                    vida_player -= ataque/2
+                    print ("...")
+                    print ("Você foi atacado")
+                    print()
+                else:
+                    print ("Você se defendeu! Sua vez!")
+                print ("Suas opções de ataque:")
+                for e in cenario["seu perfil"]["pontos de combate"]["ataques"]:
+                    print ("*{0}".format (e))
+                ataque = input("Escolha seu ataque:")
+                contra_ataque = cenario["seu perfil"]["pontos de combate"]["ataques"][ataque]
+                if contra_ataque > defesa_prof:
+                    vida_prof -= contra_ataque
+                    print ("Você atacou com sucesso")
+                elif ataque == defesa_prof:
+                    vida_prof -= contra_ataque/2
+                    print ("Você atacou com sucesso")
+                else:
+                    print()
+                    print ("Ele se defendeu")
         
     if game_over == True or vida_player <= 0:      
         print(Back.RED+"Você morreu!")
@@ -139,27 +143,28 @@ def inventario(local):
         if cenario["seu perfil"]["item"]== cenario[local]["reacoes"]["chave"]:
             cenario [local] ["reacoes"] 
             print("como voce trouxe comida, eles ajudam em dobro")
-            cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += cenario[local]["reacoes"]["dano"]
-       
+            cenario["seu perfil"]["pontos de combate"]["pontos de vida"] += cenario[local]["reacoes"]["dano"]     
     else:
         if cenario["seu perfil"]["item"] == cenario[local]["reacoes"]["chave"]:
+            print ()
+            print ()
             print ("Para sua sorte, voce tinha {0} entao não sofrera dano dessa vez.".format(cenario[local]["reacoes"]["chave"]))
         else:
             cenario [local] ["reacoes"] 
-            if cenario["seu perfil"]["item"] == "":
-                print ("Você esqueceu sua mochila hoje, entao so pode carregar um item por vez.")
-                print ("Quando encontrar algo, pode escolher leva-lo com você ou não.")
-                print("__________________")
-                print ()
-            print("Ao sair, você encontrou {0}".format(cenario[local]["reacoes"]["item"]))
-            sim_ou_nao = input("Você deseja levar com voce? (y/n)").strip()
-            if sim_ou_nao == "y":
-                cenario["seu perfil"]["item"] = cenario[local]["reacoes"]["item"]
-            else:
-                if cenario["seu perfil"]["item"] == "" :
-                    print("Você não possui nada")
-                else:
-                    print ("Entao você continua carregando {0}".format(cenario["seu perfil"]["item"]))
+    if cenario["seu perfil"]["item"] == "":
+        print ("Você esqueceu sua mochila hoje, entao so pode carregar um item por vez.")
+        print ("Quando encontrar algo, pode escolher leva-lo com você ou não.")
+        print("__________________")
+        print ()
+    print("Ao sair, você encontrou {0}".format(cenario[local]["reacoes"]["item"]))
+    sim_ou_nao = input("Você deseja levar com voce? (y/n)").strip()
+    if sim_ou_nao == "y":
+        cenario["seu perfil"]["item"] = cenario[local]["reacoes"]["item"]
+    else:
+        if cenario["seu perfil"]["item"] == "" :
+            print("Você não possui nada")
+        else:
+            print ("Entao você continua carregando {0}".format(cenario["seu perfil"]["item"]))
 # Programa principal.
 if __name__ == "__main__":
     main()
