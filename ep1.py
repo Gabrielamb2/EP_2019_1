@@ -7,7 +7,6 @@
 
 import json
 import random
-import colorama 
 from colorama import Back, Fore
 
 with open ('cenario1.json' , 'r', encoding="utf8") as arquivo:
